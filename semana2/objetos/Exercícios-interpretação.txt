@@ -1,0 +1,25 @@
+1)
+
+Matheus Nachtergaele
+Virginia Cavendish
+{canal: "Globo", horario: "14h"}
+
+
+2)
+
+a)
+{ nome: 'Juca', idade: 3, raca: 'SRD' }
+{ nome: 'Juba', idade: 3, raca: 'SRD' }
+{ nome: 'Jubo', idade: 3, raca: 'SRD' }
+
+b)
+importa as propriedades do objeto
+
+3)
+
+a)
+false
+undefined
+
+b)
+pois altura.pessoa nao foi definido
