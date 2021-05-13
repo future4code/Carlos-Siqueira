@@ -1,0 +1,8 @@
+1 a)
+cada elemento do array seguido de seu index e o array completo 3 vezes 
+
+2) a) 
+o novo array com apenas o nome de cada elemento
+
+3 a) 
+um array com apenas o primeiro e o segundo elemento pois o ultimo foi retirado com a condicao dentro do filter 
