@@ -1,0 +1,15 @@
+1)
+10
+10 5 
+
+2)
+10 10 10
+
+3)
+horasPorDia
+reaiPorHora
+
+// exercicio de escrita de codigo
+
+undefined undefined 
+ pois nao foi definido nenhum valor para as variaveis

@@ -1,0 +1,35 @@
+1)
+a) 
+realiza a verificacao se o modulo de 2 eh zero
+
+
+b)
+se o numero for par
+
+c)
+
+se o numero for impar 
+
+2)
+
+a)
+para determinar o preco de cada fruta
+
+b) 
+O preco da fruta , maca e R$ 2,25
+
+c)
+O preco da fruta , pera e R$ 5
+
+3)
+a)
+pedindo ao usuario o primeiro numero
+
+b)
+
+Esse número passou no teste
+
+mensagem is not defined
+c)
+a declaracao de mensagem esta dentro do if , logo o scopo global nao consegue acesso
+
