@@ -1,0 +1,80 @@
+img {
+    max-width: 20px;
+}
+
+header{
+    padding:5px ;
+    display: grid;
+    align-items: center;
+grid-template-columns: 1fr 1fr 45px;
+background-color: rgb(158, 0, 132);
+}
+
+
+
+button{
+    grid-column: 3 / 4;
+}
+
+body{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 40px 1fr 40px;
+}
+
+main{
+    display: grid;
+    column-gap: 15px;
+    grid-template-columns: 25% 1fr;
+}
+
+#bolao{
+    margin-top: 10px;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+ nav {
+    display: grid;
+grid-template-columns: 25px 1fr 25px;
+grid-template-rows: 30px 30px 30px 30px;
+padding: 15px;
+background-color: rgb(242, 100, 255);
+align-items: center;
+} 
+
+footer{
+    display: flex;
+align-items: center;
+justify-content: center;}
+
+
+#cards{
+    display: grid;
+    row-gap: 10px;
+    column-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr ;
+}
+
+#card{
+    display: flex;
+    flex-direction: column;
+border-right: 1.5px groove rgb(114, 114, 114);
+border-bottom: 1.5px groove rgb(114, 114, 114);
+border-top: 1px solid rgb(224, 224, 224);
+border-left: 1px solid rgb(224, 224, 224);
+
+
+
+align-items: center;
+justify-content: center;}
+
+#p1{
+    padding-left: 5px;
+    margin-bottom: 0px;
+}
+
+p{
+    margin-top: 0px;
+}
