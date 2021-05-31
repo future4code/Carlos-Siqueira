@@ -1,0 +1,55 @@
+header {
+    display: grid;
+    grid-template-columns: 50px 1fr ;
+    align-items: center;
+    background-color: rgb(255, 136, 0);
+}
+
+#busca {
+    display: flex;
+    flex-direction:row-reverse ;
+    column-gap: 3px;
+}
+
+#cards{
+    display: grid;
+    row-gap: 10px;
+    column-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr ;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#card{
+    display: flex;
+    flex-direction: column;
+border-right: 1.5px groove rgb(114, 114, 114);
+border-bottom: 1.5px groove rgb(114, 114, 114);
+border-top: 1px solid rgb(224, 224, 224);
+border-left: 1px solid rgb(224, 224, 224);
+padding-left: 15px;
+
+}
+
+#video{
+    max-width: 26vh;
+}
+
+footer{
+    display: flex;
+align-items: center;
+justify-content: center;
+padding-top: 30px;
+background-color: rgb(58, 31, 0);}
+
+h3{
+    color: ivory;
+}
+
+vid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
