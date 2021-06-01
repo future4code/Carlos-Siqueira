@@ -1,0 +1,14 @@
+.smallcard-container{
+    display: flex;
+    align-items: center;
+    padding-right: 8px;
+    border: 1px solid black;
+
+}
+
+.smallcard-container > img {
+    width: 70px;
+    max-height: 55px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
