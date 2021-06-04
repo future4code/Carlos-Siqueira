@@ -10,26 +10,35 @@ const MainContainer = styled.div`
 `
 
 class App extends React.Component {
+state= {
+perfis:[
+ {
+          nomeUsuario :'paulinha',
+          fotoUsuario :'https://picsum.photos/50/50',
+          fotoPost :'https://picsum.photos/200/150'
+        }
+          ,
+      {   
+        nomeUsuario :'joao.97',
+          fotoUsuario :'https://picsum.photos/50/49',
+          fotoPost :'https://picsum.photos/200/120'
+        }
+          ,
+
+          {nomeUsuario:'ped.93',
+          fotoUsuario:'https://picsum.photos/50/89',
+          fotoPost:'https://picsum.photos/200/150'
+        }
+]
+};
+
   render() {
+    const postes = this.state.perfis.map((profile) => {
+      return (<Post nomeUsuario = {profile.nomeUsuario} fotoUsuario = {profile.fotoUsuario} fotoPost = {profile.fotoPost} />
+    )})
     return (
       <MainContainer>
-        <Post
-          nomeUsuario={'paulinha'}
-          fotoUsuario={'https://picsum.photos/50/50'}
-          fotoPost={'https://picsum.photos/200/150'}
-        />
-
-<Post
-          nomeUsuario={'joao.97'}
-          fotoUsuario={'https://picsum.photos/50/49'}
-          fotoPost={'https://picsum.photos/200/120'}
-        />
-
-<Post
-          nomeUsuario={'pedro.se'}
-          fotoUsuario={'https://picsum.photos/50/47'}
-          fotoPost={'https://picsum.photos/200/110'}
-        />
+      {postes}
       </MainContainer>
     );
   }
