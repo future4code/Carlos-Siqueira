@@ -1,12 +1,24 @@
 import styled from 'styled-components'
-import logo from './logo.svg'
-import Matchess from './matches.png'
+
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
+const Divona = styled.div`
+display: grid;
+grid-row-gap: 5px;
+
+`
+
 const Divinha = styled.div`
 img{max-height: 20px;
-border-radius:5px}
+border-radius:5px};
+display: grid;
+grid-template-columns: 30px 1fr;
+grid-row-gap: 5px;
+
+img{
+    justify-self: center;
+}
 `
 
 
@@ -22,28 +34,23 @@ useEffect(() => {
    })},[])
 
  
-  function test(){
-      //matches[0].name
-    matches.map((e)=>{
-        console.log(e)
-    }) 
-
- }
+  
 
     
     
-    return(<>
+    return(<Divona>
 
 
 
 
  
- {matches.map((e)=>{
-       return <Divinha><img src={e.photo} /><span>{e.name +", "+ e.age}</span></Divinha>
+ {matches.map((e,i)=>{
+     e.key = e.id
+       return <Divinha key={e.id}><img src={e.photo} alt={e.name} /><span>{e.name +", "+ e.age}</span></Divinha>
 
     }) }
     
-    </>)
+    </Divona>)
 }
 
 
