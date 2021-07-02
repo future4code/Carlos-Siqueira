@@ -131,7 +131,7 @@ setPerfil(res.data.profile)        })
     
 }    
 
-let yeaah = <img scr={itsAMatch1} alt="yeaaH"/>
+let yeaah = <ItsAMatch src={itsAMatch1} alt="yeaaH"/>
 let matching = !match ? <></>  :yeaah
 
 let cartao
