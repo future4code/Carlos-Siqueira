@@ -13,11 +13,11 @@ function App() {
     <BrowserRouter>
       <Switch>
     <Route path='/' exact component={HomePage}/>
-    <Route path='/new' component={ApplicationFormPage}/>
-    <Route path=':id' component={CreateTripPage}/>
-    <Route path='/admin/' component={AdminHome}/>
+    <Route path='/app' exact component={ApplicationFormPage}/>
+    <Route path='/new' exact component={CreateTripPage}/>
+    <Route path='/admin' exact component={AdminHome}/>
     <Route path='/trips' component={ListTripsPage}/>
-    <Route path='/login' component={LoginPage}/>
+     <Route path='/login' exact component={LoginPage}/>
     <Route path='trips/:id' component={TripDetails}/>
 
     </Switch>

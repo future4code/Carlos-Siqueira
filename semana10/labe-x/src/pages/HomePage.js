@@ -1,13 +1,18 @@
 import styled from 'styled-components'
+import {useHistory} from 'react-router-dom'
+
 
 const Botao = styled.button`
 grid-column-start: 2;
 grid-row-start: 3;
+border-radius: 8px;
 `
 
 const Botao2 = styled.button`
 grid-column-start: 3;
 grid-row-start: 3;
+border-radius: 8px;
+
 `
 
 
@@ -28,16 +33,22 @@ margin:auto;
 `
 
 
-function HomePage() {
+ function HomePage() {
+let history = useHistory()
+
+ function handleClickRoute(rota) {
+  history.push(`/${rota}`);
+}
     return (
       <Appl>
 <Title>LabeX</Title>  
-<Botao>Ver Viagens</Botao>  
-<Botao2>Login</Botao2>  
+<Botao onClick={() => handleClickRoute('trips') }>Ver Viagens</Botao>  
+<Botao2
+onClick={() => handleClickRoute('login') }
+>Login</Botao2>  
 
   </Appl>
     );
   }
   
   export default HomePage;
-  
