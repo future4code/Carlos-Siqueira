@@ -5,7 +5,7 @@ import  CreateTripPage  from "./pages/CreateTripPage";
 import  AdminHome  from "./pages/AdminHomePage";
 import  ListTripsPage  from "./pages/ListTripsPage";
 import  LoginPage  from "./pages/LoginPage";
-import  TripDetails  from "./pages/TripDetailsPage";
+import  TripDetails  from "./pages/TripDetailsPageCopy";
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
     <Route path='/admin' exact component={AdminHome}/>
     <Route path='/trips' component={ListTripsPage}/>
      <Route path='/login' exact component={LoginPage}/>
-    <Route path='trips/:id' component={TripDetails}/>
+    <Route path='/trip/:id' component={TripDetails}/>
 
     </Switch>
     </BrowserRouter>
