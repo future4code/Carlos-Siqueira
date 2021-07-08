@@ -73,19 +73,7 @@ setViagens(res.data.trips)
 },[])
 
 
-function renderViagens(){
- console.log('renderizando')
-  viagens.map((el)=>{
-     
-    <Appl>
-    <p>{el.name}</p>
-    <p>{el.description}</p> 
-    <p>{el.planet}</p>
-    <p>{el.durationInDays}</p>
-    <p>{el.date}</p>
-     </Appl> 
-    })
-}
+
     return (
       <Appl>
         <Botoes>
@@ -94,15 +82,23 @@ function renderViagens(){
 onClick={() => handleClickRoute('app') }
 >Inscrever-se</Botao2>  
 </Botoes>
-<Title onClick={renderViagens} >Lista de Viagens</Title>  
+<Title  >Lista de Viagens</Title>  
 { 
+(localStorage.getItem('token'))?
  viagens.map((el)=><Appli onClick={() => history.push(`/app/${el.id}`)} >
   <p>Nome : {el.name}</p>
   <p>Descrição : {el.description}</p>
   <p>Planeta : {el.planet}</p>
     <p> Duração : {el.durationInDays}</p>
     <p>Data : {el.date}</p>
+  </Appli>) : viagens.map((el)=><Appli >
+  <p>Nome : {el.name}</p>
+  <p>Descrição : {el.description}</p>
+  <p>Planeta : {el.planet}</p>
+    <p> Duração : {el.durationInDays}</p>
+    <p>Data : {el.date}</p>
   </Appli>)
+
 }
 
   </Appl>
