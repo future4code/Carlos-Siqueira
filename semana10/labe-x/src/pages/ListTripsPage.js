@@ -64,9 +64,7 @@ const [viagens,setViagens] = useState([])
   history.push(`/${rota}`);
 }
 
-useEffect(()=>{if(!localStorage.getItem('token')){
-  history.push('/login')
-}
+useEffect(()=>{
 axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/carlos/trips`).then((res)=>{
 console.log(res.data.trips)
 setViagens(res.data.trips)
