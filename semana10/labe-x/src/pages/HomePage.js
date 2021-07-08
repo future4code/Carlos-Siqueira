@@ -39,13 +39,15 @@ let history = useHistory()
  function handleClickRoute(rota) {
   history.push(`/${rota}`);
 }
+
+let botao = localStorage.getItem('token') ? 'Area de Admin' : 'Login'
     return (
       <Appl>
 <Title>LabeX</Title>  
 <Botao onClick={() => handleClickRoute('trips') }>Ver Viagens</Botao>  
 <Botao2
 onClick={() => handleClickRoute('login') }
->Login</Botao2>  
+>{botao }</Botao2>  
 
   </Appl>
     );

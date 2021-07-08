@@ -16,7 +16,7 @@ padding: 5px;
 
 
 &:hover{
-  background: white;
+  background: rgba(214,214,214,1);
 }
 `
 const Trip = styled.div`
@@ -24,14 +24,15 @@ display:flex;
 justify-content:space-between;
 height:30px;
 margin: 10px;
-background: gray;
+background: rgba(251,251,251,1);
 border-radius: 10px;
 align-items: center;
+box-shadow: 2px 2px 5px 0px;
 
 p{margin:5px;
 width: 90%;
   &:hover{
-  background: white;
+  background: rgba(214,214,214,1);
 }
 }
 `

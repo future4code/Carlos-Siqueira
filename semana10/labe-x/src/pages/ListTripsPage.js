@@ -32,11 +32,23 @@ const Appli = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: center;
-box-shadow: 1px 0 5px;
-padding: 5px;
-margin: 20px;
+background: rgba(251,251,251,1);
+border-radius: 10px;
+align-items: flex-start;
+box-shadow: 2px 2px 5px 0px;
+padding: 2px 2px 2px 10px ;
+margin: 15px;
+
+&:hover{
+  background: rgba(214,214,214,1);
+}
+
 p{ margin:0px;
 justify-content:center;}
+
+
+
+
 `
 
 const Title = styled.h1`
@@ -86,7 +98,7 @@ onClick={() => handleClickRoute('app') }
 </Botoes>
 <Title onClick={renderViagens} >Lista de Viagens</Title>  
 { 
- viagens.map((el)=><Appli>
+ viagens.map((el)=><Appli onClick={() => history.push(`/app/${el.id}`)} >
   <p>Nome : {el.name}</p>
   <p>Descrição : {el.description}</p>
   <p>Planeta : {el.planet}</p>

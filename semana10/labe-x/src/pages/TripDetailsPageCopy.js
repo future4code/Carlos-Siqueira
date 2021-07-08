@@ -1,14 +1,40 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useHistory, useParams } from "react-router";
+import { useHistory, useParams } from "react-router-dom";
+
+import createHistory from 'history/createBrowserHistory'
+
+
+import styled from 'styled-components'
+
+
+const Appl = styled.div`
+display:flex;
+flex-direction:column;
+background: rgba(251,251,251,1);
+border-radius: 10px;
+align-items: flex-start;
+box-shadow: 2px 2px 5px 0px;
+margin: 15px;
+p{
+  margin: 1px;
+}
+
+`
+
+
+const Appli = styled.div`
+display:flex;`
 
 function TripDetails() {
+  const histori = createHistory();
   const history = useHistory()
 
    const params = useParams()
    const id = params.id
+   let reload = 0
   console.log(id)
-const [trip,setTrip] = useState({})
+const [trip,setTrip] = useState({candidates:[],approved:[]})
 useEffect(()=>{
   const header = {
     'auth' : localStorage.getItem('token')
@@ -19,21 +45,35 @@ useEffect(()=>{
       console.log(trip)
     }
   ).catch((err)=> console.log(err))
-},[id])
+},[id,reload])
  
-function candidatos(){
-  if(trip.name){
-  trip.candidates.map((el)=>{
-    return <p> {el}</p>
-  })}
-}
 
-function aprovados(){
-  if(trip.name){
-  trip.approved.map((el)=>{
-    return <p> {el}</p>
-  })}
-}
+
+function aprovarCandidato(eid){
+  const header = {
+    'Content-Type': 'application/json',
+    'auth' : localStorage.getItem('token')
+  }
+
+  const bodi = {
+    approve:true
+  }
+  axios.put(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/carlos/trips/${id}/candidates/${eid}/decide`,bodi,{headers:header}).then((res)=> histori.go(0))
+ }
+
+
+ function rejeitarCandidato(eid){
+  const header = {
+    'Content-Type': 'application/json',
+    'auth' : localStorage.getItem('token')
+  }
+
+  const bodi = {
+    approve:false
+  }
+  axios.put(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/carlos/trips/${id}/candidates/${eid}/decide`,bodi,{headers:header}).then((res)=> histori.go(0)  )
+ }
+
 
     return (
       <div>
@@ -44,12 +84,10 @@ function aprovados(){
       <p>Duração : {trip.durationInDays}</p>
       <p>Data : {trip.date}</p>
 <button onClick={() => history.push('/admin')}>Voltar</button>
-<h3>Candidatos Pendentes</h3>
-
-{candidatos()}
-
+<h3 >Candidatos Pendentes</h3>
+{trip.candidates.map((el)=> <Appl><p>Nome : {el.name}</p><p>Profissão : {el.profession}</p><p>País : {el.country}</p><p>Idade : {el.age}</p><p>Texto de Candidatura : {el.applicationText}</p><Appli><button onClick={() => rejeitarCandidato(el.id) } >Rejeitar</button><button onClick={() => aprovarCandidato(el.id) }>Aprovar</button></Appli></Appl>)} 
 <h3>Candidatos Aprovados</h3>
-{aprovados()}
+{trip.approved.map((el)=> <Appl><p>Nome : {el.name}</p><p>Profissão : {el.profession}</p><p>País : {el.country}</p><p>Idade : {el.age}</p><p>Texto de Candidatura : {el.applicationText}</p></Appl>)} 
       </div>
     );
   }

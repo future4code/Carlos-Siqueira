@@ -1,6 +1,7 @@
 import{ BrowserRouter, Route, Switch} from 'react-router-dom'
 import  HomePage  from "./pages/HomePage";
 import  ApplicationFormPage  from "./pages/ApplicationFormPage";
+import  ApplicationFormPageCopy  from "./pages/ApplicationFormPageCopy";
 import  CreateTripPage  from "./pages/CreateTripPage";
 import  AdminHome  from "./pages/AdminHomePage";
 import  ListTripsPage  from "./pages/ListTripsPage";
@@ -13,7 +14,8 @@ function App() {
     <BrowserRouter>
       <Switch>
     <Route path='/' exact component={HomePage}/>
-    <Route path='/app' exact component={ApplicationFormPage}/>
+    <Route path='/app/:id' component={ApplicationFormPage}/>
+    <Route path='/app/' component={ApplicationFormPageCopy}/>
     <Route path='/new' exact component={CreateTripPage}/>
     <Route path='/admin' exact component={AdminHome}/>
     <Route path='/trips' component={ListTripsPage}/>
