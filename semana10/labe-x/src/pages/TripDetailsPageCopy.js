@@ -7,6 +7,18 @@ import createHistory from 'history/createBrowserHistory'
 
 import styled from 'styled-components'
 
+const Red = styled.button`
+&:hover{
+  color: red;
+}
+`
+
+const Green = styled.button`
+&:hover{
+  color: green;
+}
+`
+
 
 const Appl = styled.div`
 display:flex;
@@ -21,10 +33,39 @@ p{
 }
 
 `
+const Viagem = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+margin-left: 20px;
+gap:1px;
 
+p{
+  margin:3px;
+}
+
+button{
+  background: gray;
+color: white;
+font-weight: 800;
+border-radius: 8px;
+width: 142px;
+height: 32px;
+margin:3px;}
+`
 
 const Appli = styled.div`
-display:flex;`
+display:flex;
+button{
+  background: gray;
+color: white;
+font-weight: 800;
+border-radius: 8px;
+width: 142px;
+height: 32px;
+margin:10px;}
+
+`
 
 function TripDetails() {
   const histori = createHistory();
@@ -32,7 +73,6 @@ function TripDetails() {
 
    const params = useParams()
    const id = params.id
-   let reload = 0
   console.log(id)
 const [trip,setTrip] = useState({candidates:[],approved:[]})
 useEffect(()=>{
@@ -42,10 +82,9 @@ useEffect(()=>{
   axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/carlos/trip/${id}`,{
     headers: header}).then(
     (res) => {setTrip(res.data.trip)
-      console.log(trip)
     }
   ).catch((err)=> console.log(err))
-},[id,reload])
+},[id])
  
 
 
@@ -77,6 +116,7 @@ function aprovarCandidato(eid){
 
     return (
       <div>
+        <Viagem>
         <h1>{trip.name}</h1>
       <p>Nome : {trip.name}</p>
       <p>Descrição : {trip.description}</p>
@@ -84,8 +124,9 @@ function aprovarCandidato(eid){
       <p>Duração : {trip.durationInDays}</p>
       <p>Data : {trip.date}</p>
 <button onClick={() => history.push('/admin')}>Voltar</button>
+</Viagem>
 <h3 >Candidatos Pendentes</h3>
-{trip.candidates.map((el)=> <Appl><p>Nome : {el.name}</p><p>Profissão : {el.profession}</p><p>País : {el.country}</p><p>Idade : {el.age}</p><p>Texto de Candidatura : {el.applicationText}</p><Appli><button onClick={() => rejeitarCandidato(el.id) } >Rejeitar</button><button onClick={() => aprovarCandidato(el.id) }>Aprovar</button></Appli></Appl>)} 
+{trip.candidates.map((el)=> <Appl><p>Nome : {el.name}</p><p>Profissão : {el.profession}</p><p>País : {el.country}</p><p>Idade : {el.age}</p><p>Texto de Candidatura : {el.applicationText}</p><Appli><Red onClick={() => rejeitarCandidato(el.id) } >Rejeitar</Red><Green onClick={() => aprovarCandidato(el.id) }>Aprovar</Green></Appli></Appl>)} 
 <h3>Candidatos Aprovados</h3>
 {trip.approved.map((el)=> <Appl><p>Nome : {el.name}</p><p>Profissão : {el.profession}</p><p>País : {el.country}</p><p>Idade : {el.age}</p><p>Texto de Candidatura : {el.applicationText}</p></Appl>)} 
       </div>

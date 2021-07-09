@@ -6,14 +6,15 @@ import axios from 'axios'
 
 const Botao = styled.button`
 
+background: gray;
+color: white;
+font-weight: 800;
 border-radius: 8px;
+width: 142px;
+height: 32px;
 `
 
-const Botao2 = styled.button`
 
-border-radius: 8px;
-
-`
 
 const Botoes = styled.div`
 display: flex;
@@ -77,10 +78,10 @@ setViagens(res.data.trips)
     return (
       <Appl>
         <Botoes>
-<Botao onClick={() => handleClickRoute('') }>Voltar</Botao>  
-<Botao2
+<Botao  onClick={() => handleClickRoute('') }>Voltar</Botao>  
+<Botao
 onClick={() => handleClickRoute('app') }
->Inscrever-se</Botao2>  
+>Inscrever-se</Botao>  
 </Botoes>
 <Title  >Lista de Viagens</Title>  
 { 

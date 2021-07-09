@@ -5,9 +5,32 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import lixoImg from '../lixo.png'
 
-const Appl = styled.div``
-const Botoes = styled.div``
-const Viagens = styled.div``
+const Appl = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+`
+const Botoes = styled.div`
+display:flex;
+gap:5vw;
+
+button{
+  background: gray;
+color: white;
+font-weight: 800;
+border-radius: 8px;
+width: 142px;
+height: 32px;
+}
+`
+const Viagens = styled.div`
+display: flex;
+flex-direction: column;
+gap:1vh;
+width:80%;
+padding-top:3vh;
+`
 
 const Lixin = styled.img`
 height:70%;
@@ -40,7 +63,6 @@ width: 90%;
 
 function AdminHomePage() {
   const [viagens,setViagens] = useState([])
-  let count = 0
   useEffect(()=>{if(!localStorage.getItem('token')){
     history.push('/login')
   }

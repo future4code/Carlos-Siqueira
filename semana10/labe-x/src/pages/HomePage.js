@@ -6,13 +6,18 @@ const Botao = styled.button`
 grid-column-start: 2;
 grid-row-start: 3;
 border-radius: 8px;
+background: gray;
+color: white;
+font-weight: 800;
 `
 
 const Botao2 = styled.button`
 grid-column-start: 3;
 grid-row-start: 3;
 border-radius: 8px;
-
+background: gray;
+color: white;
+font-weight: 800;
 `
 
 

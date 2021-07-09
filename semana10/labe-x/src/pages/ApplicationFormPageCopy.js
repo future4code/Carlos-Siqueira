@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {useHistory, useParams} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 import axios from "axios";
 import { useEffect, useState } from 'react';
 import txt from './paises.txt'
@@ -7,24 +7,21 @@ import useForm from '../hooks/useForm.js'
 
 
 
-const fs = require('fs');
 let paises =[]
 axios(txt).then(res => paises = res.data.split('\n'))
               
 
 const Botao = styled.button`
+align-self: center;
+justify-self:center;
+ background: gray;
+color: white;
+font-weight: 800;
 border-radius: 8px;
+width: 142px;
+height: 32px;
 `
-const Botao2 = styled.button`
 
-border-radius: 8px;
-
-`
-const Botoes = styled.div`
-display:flex;
-justify-content: center;
-gap:30px;
-`
 
 
 const Appl = styled.div`
@@ -32,6 +29,12 @@ display: flex;
 flex-direction: column;
 margin: 10vw;
 gap:10px;
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap:1vh;
+}
 `
 
 const Title = styled.h1`
@@ -42,7 +45,6 @@ margin:auto;
  function ApplicationFormPage() {
    let id =''
    let idtrip
-   let index = 0
   const history = useHistory()
 const [trips,setTrips] = useState([])
   
@@ -64,9 +66,7 @@ const [trips,setTrips] = useState([])
 
 const {form, onChange} = useForm({trip:'',name:'',age:'',applicationText:'',profession:'',country:''})
 
-function filtraId(ele){
-  return ele.name ==form.name
-}
+
 
 
 function handleForm(event){

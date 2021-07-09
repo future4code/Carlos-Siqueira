@@ -6,7 +6,29 @@ import axios from 'axios'
 
 const Appl = styled.div`
 display:flex;
-flex-direction:column;`
+flex-direction:column;
+justify-content: center;
+align-items: center;
+
+button{
+  width: 142px;
+height: 32px;
+  justify-self: center;
+  align-self: center;
+  margin: 5px;
+  background: gray;
+color: white;
+font-weight: 800;
+border-radius: 8px;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap:1vh;
+}
+`
 const Botoes = styled.div`
 display: flex;`
 
@@ -17,7 +39,7 @@ const [nome,setNome] = useState('')
 const [planeta,setPlaneta] = useState('1')
 const [data,setData] = useState('')
 const [descricao,setDescricao] = useState('')
-const [duracao,setDuracao] = useState(Number)
+const [duracao,setDuracao] = useState('')
 
 function handleNome (event){
   setNome(event.target.value)
@@ -40,7 +62,8 @@ function handleDuracao(event){
 
 
   const history = useHistory()
-  function createTrip(){
+  function createTrip(event){
+    event.preventDefault()
     const body = {
 
       "name": nome,
@@ -68,7 +91,7 @@ function handleDuracao(event){
     return (
       <Appl>
         <h1>Criar Viagem</h1>
-        
+        <form  onSubmit={createTrip} >
         <input placeholder='Nome'
         value={nome} name='' onChange={handleNome} ></input>
 
@@ -83,12 +106,12 @@ function handleDuracao(event){
 
 </select>
 <input type='date' value={data} name='' onChange={handleData} placeholder='mm/dd/yyy' ></input>
-<input value={descricao} name='' onChange={handleDescricao} placeholder='descricao' ></input>
-<input value={duracao} name='duration' type="number" onChange={handleDuracao} placeholder='duracao em dias' ></input>
+<input value={descricao} name='description' onChange={handleDescricao} placeholder='Descricao' ></input>
+<input value={duracao} name='duration' type="number" onChange={handleDuracao} placeholder='Duracao em dias' ></input>
 
-  <Botoes> <button onClick={voltar}>Voltar</button>
-      <button onClick={createTrip} >Criar</button>
-      </Botoes>
+      <button  >Criar</button>
+      </form>
+      <button onClick={voltar}>Voltar</button>
 
       </Appl>
     );

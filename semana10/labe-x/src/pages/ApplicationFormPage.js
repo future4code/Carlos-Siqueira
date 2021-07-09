@@ -5,15 +5,19 @@ import { useEffect, useState } from 'react';
 import txt from './paises.txt'
 import useForm from '../hooks/useForm.js'
 
-const fs = require('fs');
 let paises =[]
 axios(txt).then(res => paises = res.data.split('\n'))
             
 
 const Botao = styled.button`
-border-radius: 8px;
-width: 80%;
 align-self: center;
+justify-self:center;
+ background: gray;
+color: white;
+font-weight: 800;
+border-radius: 8px;
+width: 142px;
+height: 32px;
 `
 
 
@@ -23,6 +27,12 @@ display: flex;
 flex-direction: column;
 margin: 10vw;
 gap:10px;
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap:1vh;
+}
 `
 
 const Title = styled.h1`
@@ -87,7 +97,7 @@ const {form, onChange} = useForm({trip:undefined,name:'',age:'',applicationText:
 
 </form>
 
-<Botao onClick={() => handleClickRoute('') }>Voltar</Botao>  
+<Botao onClick={() => handleClickRoute('trips') }>Voltar</Botao>  
 
   </Appl>
     );
