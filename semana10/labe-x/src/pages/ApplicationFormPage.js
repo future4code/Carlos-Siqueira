@@ -70,7 +70,7 @@ function handleForm(event){
   event.preventDefault()
   form.trip = trip.name
   console.log(form,trip.id)
-  axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/carlos/trips/${trip.id}/apply`,form,header).then((res) => console.log('deu',res)).catch((err)=>console.log(err))
+  axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/carlos/trips/${trip.id}/apply`,form,header).then((res) => alert('Solicitaçao enviada com sucesso')).catch((err)=>console.log(err))
 }
 
 const {form, onChange} = useForm({trip:undefined,name:'',age:'',applicationText:'',profession:'',country:''})
