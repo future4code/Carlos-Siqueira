@@ -30,7 +30,7 @@ useEffect(()=>{
       })
 
 
-},[movie,params])
+},[])
 
 const Logo = styled.h1`
 display: flex;
@@ -84,12 +84,15 @@ margin:auto
 
 const history = useHistory();
 
+function BackHome(){
 
+    history.push('/home')
+}
     return(<>
     
     
     
-    <Logo onClick={(()=> history.push('/home'))} >LabeMovies</Logo>
+    <Logo onClick={BackHome} >LabeMovies</Logo>
 
 <Main>
 <Capa src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}/>
