@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import {
  
   Link,
+  useHistory,
   useParams
 } from "react-router-dom";
 
@@ -40,6 +41,10 @@ top:2%;
 left: 43%;
 font-family: 'Roboto';
 align-content: center;
+
+&:hover{
+    cursor: pointer;
+}
 
 `
 
@@ -77,14 +82,14 @@ margin:auto
 `
 
 
-
+const history = useHistory();
 
 
     return(<>
     
     
     
-    <Logo><Link to={'/home'}>LabeMovies</Link></Logo>
+    <Logo onClick={(()=> history.push('/home'))} >LabeMovies</Logo>
 
 <Main>
 <Capa src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}/>
