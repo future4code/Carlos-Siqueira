@@ -4,10 +4,7 @@ import { useEffect, useState } from 'react';
 import next from './next.png'
 import back from './back.png'
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
+
   useHistory
 } from "react-router-dom";
 
@@ -129,13 +126,6 @@ opacity: 80%;
 }
 `
 
-function SelecionarGeneros(event ){
-event.preventDefault();
-
-let generos = genre
-generos.push(event.value)
-setGenre(generos)
-}
 
 
   return (<>
@@ -148,25 +138,25 @@ setGenre(generos)
 <label>
 <select value={genre} onChange={e => {setGenre(e.target.value)}}>
 <option value='' disabled >Selecione o Genero desejado</option>
-<option value={28}>Action</option>
-<option value={12}>Adventure</option>
-<option value={16}>Animation</option>
-<option value={35}>Comedy</option>
+<option value={28}>Ação</option>
+<option value={12}>Aventura</option>
+<option value={16}>Animação</option>
+<option value={35}>Comedia</option>
 <option value={80}>Crime</option>
-<option value={99}>Documentary</option>
+<option value={99}>Documentario</option>
 <option value={18}>Drama</option>
-<option value={10751}>Family</option>
-<option value={14}>Fantasy</option>
-<option value={36}>History</option>
+<option value={10751}>Familia</option>
+<option value={14}>Fantasia</option>
+<option value={36}>Historia</option>
 <option value={27}>Horror</option>
-<option value={10402}>Music</option>
-<option value={9648}>Mystery</option>
+<option value={10402}>Musical</option>
+<option value={9648}>Mysterio</option>
 <option value={10749}>Romance</option>
-<option value={878}>Science Fiction</option>
-<option value={10770}>TV Movie</option>
+<option value={878}>Ficção Científica</option>
+<option value={10770}>TV</option>
 <option value={53}>Thriller</option>
-<option value={10752}>War</option>
-<option value={37}>Western</option>
+<option value={10752}>Guerra</option>
+<option value={37}>Velho Oeste</option>
 
 
 
@@ -186,7 +176,8 @@ setGenre(generos)
     <Movies>
 
   {popular.map((el,i)=>{
-    return <Capa src={`https://image.tmdb.org/t/p/w500/${el.poster_path}`}></Capa>
+    return (<Capa key={el.id} onClick={()=>history.push('/movie/'+el.id)} src={`https://image.tmdb.org/t/p/w500/${el.poster_path}`}></Capa>
+    )
   }) }
 
   {popular.length===0?  <p>Nenhum filme do genero selecionado encontrado nessa pagina, tente mudar de página</p>:<p></p>}

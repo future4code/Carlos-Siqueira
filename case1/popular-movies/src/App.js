@@ -1,15 +1,11 @@
-import styled from 'styled-components';
-import axios from 'axios'
-import { useEffect, useState } from 'react';
-import next from './next.png'
-import back from './back.png'
+
 import Appp from './Appp';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
+import Movie from './Movie';
 
 
 
@@ -22,6 +18,8 @@ function App() {
       <Route path='/home'>
         <Appp />
       </Route>
+      <Route path='/movie/:id' component={Movie}/>
+        
 
     </Switch>
 
