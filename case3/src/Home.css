@@ -1,0 +1,56 @@
+#home{
+    display: flex;
+
+    
+}
+
+#home img{
+    max-width: 150px;
+max-height: 200px;
+}
+
+.Yellow {
+    filter: invert(86%) sepia(37%) saturate(3910%) hue-rotate(1deg) brightness(104%) contrast(104%);
+
+
+}
+
+
+.Blue {
+
+    filter: invert(15%) sepia(100%) saturate(3817%) hue-rotate(227deg) brightness(99%) contrast(118%);
+}
+
+
+.Silver{
+    filter: invert(62%) sepia(11%) saturate(282%) hue-rotate(218deg) brightness(94%) contrast(90%);
+}
+
+.Green{
+    filter: invert(39%) sepia(100%) saturate(1052%) hue-rotate(86deg) brightness(99%) contrast(109%);
+}
+
+.Red{
+    filter: invert(10%) sepia(100%) saturate(6959%) hue-rotate(358deg) brightness(93%) contrast(117%);
+}
+
+.Orange{
+    filter: invert(50%) sepia(49%) saturate(2849%) hue-rotate(359deg) brightness(101%) contrast(108%);
+}
+
+.White{
+    background-color: gray;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(119deg) brightness(103%) contrast(101%);
+}
+
+.Teal{
+    filter: invert(22%) sepia(94%) saturate(2269%) hue-rotate(164deg) brightness(94%) contrast(104%);
+}
+
+.Purple{
+    filter: invert(15%) sepia(72%) saturate(5243%) hue-rotate(278deg) brightness(64%) contrast(117%);
+}
+
+.Brown{
+    filter: invert(27%) sepia(98%) saturate(629%) hue-rotate(357deg) brightness(99%) contrast(104%);
+}
