@@ -1,8 +1,52 @@
 #home{
     display: flex;
-
+flex-direction: column;
     
 }
+
+#header{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#body{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      gap:5px;
+
+
+}
+
+#body div{
+    
+    align-self: flex-start;
+    justify-self: flex-start;
+    border: black solid;
+}
+
+@media (max-width: 1700px) { 
+    #body{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+
+ }
+
+
+ @media (max-width: 777px) { 
+    #body{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+ }
+
 
 #home img{
     max-width: 150px;

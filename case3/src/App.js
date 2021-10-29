@@ -9,13 +9,18 @@ import {
 
 import React from "react";
 import Home from './Home';
+import Bike from './Bike';
 
 function App() {
   return (<Router>
 
     <Switch>
-<Route path={'/'}>
+<Route path={'/home'}>
   <Home></Home>
+</Route>
+
+<Route path={'/bike/:id'}>
+  <Bike></Bike>
 </Route>
 
     </Switch>
