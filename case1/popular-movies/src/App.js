@@ -3,7 +3,8 @@ import Appp from './Appp';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 import Movie from './Movie';
 
@@ -19,7 +20,11 @@ function App() {
         <Appp />
       </Route>
       <Route path='/movie/:id' component={Movie}/>
-        
+        <Route path='/' render={()=>{
+          return(
+            <Redirect to='/home'/>
+          )
+        }} ></Route>
 
     </Switch>
 
