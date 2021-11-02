@@ -35,7 +35,7 @@ axios.get(`https://api.github.com/users/${pesquisa}`).then((res)=>{
 {pesquisas.length<1?<></>:<select onChange={(el)=>{
 setPesquisa(el.target.value)    
 }} > 
-    <option defaultValue disabled>Histórico</option>
+    <option defaultValue selected disabled>Histórico</option>
   {pesquisas.map((el,i)=>{
       return<option key={new Date()+i} value={el}>{el}</option>
   })}</select>}
