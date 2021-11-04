@@ -1,0 +1,31 @@
+.aplicativo{
+    display: flex;
+    justify-content: center;
+    margin: 2%;
+    padding: 2%;
+    gap:2%;
+
+
+
+    }
+    
+
+   .aplicativo input{
+        max-height: 50px;
+    
+        }
+
+        .aplicativo select{
+            max-height: 50px;
+        
+            }
+    
+            .aplicativo button{
+                max-height: 50px;
+            
+                }
+    
+    @media(max-width:1100px) {
+        .aplicativo{
+flex-direction: column; 
+row-gap: 10px; }}

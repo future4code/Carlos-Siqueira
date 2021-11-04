@@ -1,0 +1,9 @@
+body{width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+align-items: center;
+    background: radial-gradient(ellipse farthest-corner at center top, #ffee75, #ff8930);
+    height: 100vh;
+}
+
