@@ -25,7 +25,7 @@ flex-direction: column;
     
     align-self: flex-start;
     justify-self: flex-start;
-    border: black solid;
+    border: gray solid 1px;
 }
 
 @media (max-width: 1700px) { 
@@ -97,4 +97,10 @@ max-height: 200px;
 
 .Brown{
     filter: invert(27%) sepia(98%) saturate(629%) hue-rotate(357deg) brightness(99%) contrast(104%);
+}
+
+.Pink{
+    filter: invert(43%) sepia(69%) saturate(2570%) hue-rotate(292deg) brightness(97%) contrast(96%);
+
+
 }

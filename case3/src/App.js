@@ -3,7 +3,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from "react-router-dom";
 
 
@@ -22,7 +23,9 @@ function App() {
 <Route path={'/bike/:id'}>
   <Bike></Bike>
 </Route>
-
+<Route path={'/'} > 
+<Redirect to={'/home'}></Redirect>
+</Route>
     </Switch>
   </Router>
   );
